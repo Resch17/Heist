@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Heist
 {
@@ -32,10 +33,27 @@ namespace Heist
                 }
             }
             Console.WriteLine($"Your team has {teamRoster.Count} members:");
-            foreach (TeamMember member in teamRoster)
+
+            int bankDifficulty = 100;
+            List<int> teamSkills = teamRoster.Select(member=>member.SkillLevel).ToList();
+            int teamSkillTotal = teamSkills.Sum();
+            bool heistSuccess;
+            if (teamSkillTotal >= bankDifficulty)
             {
-                member.DisplayInfo();
+                heistSuccess = true;
+            } else
+            {
+                heistSuccess = false;
             }
+            Console.WriteLine("╒════════════════════════════╕");
+            Console.WriteLine("│        Heist Report        │");
+            Console.WriteLine("╞════════════════════════════╛");
+            Console.WriteLine($"│  Bank Difficulty: {bankDifficulty}");
+            Console.WriteLine($"│  Crew Skill: {teamSkillTotal}");
+            Console.WriteLine("│  ");
+            Console.WriteLine($"│  Heist Outcome: {(heistSuccess ? "Success!" : "Failure!")} ");
+            Console.WriteLine("╘════════════════════════════╛");
+            
         }
     }
 }
