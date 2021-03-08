@@ -18,7 +18,8 @@ namespace Heist
             int output = 0;
             while (output == 0)
             {
-                Console.WriteLine($"Enter {newMemberName}'s skill level: ");
+                Console.WriteLine($"Enter {newMemberName}'s skill level: ");                
+                Console.Write(" > ");
                 string newMemberSkillInput = Console.ReadLine();
                 try
                 {
@@ -37,7 +38,8 @@ namespace Heist
             decimal output = -1.0m;
             while (output < 0.0m || output > 2.0m)
             {
-                Console.WriteLine($"Enter {newMemberName}'s courage factor (must be between 0.0 and 2.0): ");
+                Console.WriteLine($"Enter {newMemberName}'s courage factor (must be between 0.0 and 2.0): ");                
+                Console.Write(" > ");
                 string newMemberCourageInput = Console.ReadLine();
                 try
                 {
