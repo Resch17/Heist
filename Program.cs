@@ -33,8 +33,8 @@ namespace Heist
                 }
             }
             Console.WriteLine($"Your team has {teamRoster.Count} members:");
-
-            int bankDifficulty = 100;
+            int luck = new Random().Next(-10, 10);
+            int bankDifficulty = 100 + luck;
             List<int> teamSkills = teamRoster.Select(member=>member.SkillLevel).ToList();
             int teamSkillTotal = teamSkills.Sum();
             bool heistSuccess;
