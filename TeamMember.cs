@@ -52,9 +52,7 @@ namespace Heist
         }
 
         public void DisplayInfo(){
-            Console.WriteLine("╒════════════════════╕");
-            Console.WriteLine("│  Team Member Info  │");
-            Console.WriteLine("╞════════════════════╛");
+            Console.WriteLine("╒═════════════════════");
             Console.WriteLine($"│ Name: {Name}");
             Console.WriteLine($"│ Skill level: {SkillLevel}");
             Console.WriteLine($"│ Courage factor: {CourageFactor}");
